@@ -3,15 +3,16 @@
 export default function Home() {
 
   return (
-    <div>
-      <nav style={{bsBreadcrumbDivider: '->'}}aria-label="breadcrumb">
+    <div className="home-container">
+      <div className="breadcrumb" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item active" aria-current="page">Bubbles</li>
-          <li class="breadcrumb-item">Cosmo</li>
-          <li class="breadcrumb-item">Dolores</li>
-          <li class="breadcrumb-item disabled">Fred</li>
+          <li class="breadcrumb-item active" aria-current="page">Accueil</li>
+          <li class="breadcrumb-item">Ma Région</li>
+          <li class="breadcrumb-item">Vie Institutionnelle</li>
+          <li class="breadcrumb-item disabled">Trouve Ton Artisan</li>
         </ol>
-      </nav>
+      </div>
+      <h1>Trouve ton artisan en 4 étapes</h1>
     </div>
     
   )
