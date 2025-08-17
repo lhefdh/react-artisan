@@ -1,42 +1,121 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@font-face {
+  font-family: "Graphik";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/src/assets/Graphik_Collection/Graphik_Family/Graphik-Regular-Trial.otf"); /* IE9 Compat Modes */
+}
+* {
+  font-family: "Graphik", sans-serif;
+}
+
+.nav {
+  padding: 24px 48px;
+  background: #f1f8fc;
+}
+
+.navbar-container {
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.0793474);
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  width: 163px;
+  height: auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.inline-menu{
+  display:none;
+}
+.search-bar-input{
+  display:none;
+}
+
+.navbar-direction {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+
+p {
+  color: #00497c;
+}
+.home-container{
+  padding: 24px 48px;
+}
+.breadcrumb{
+  --bs-breadcrumb-divider: url(./assets/arrow-blue-small.svg);
+}
+textarea {
+  width:100%;
+}
+#home-classement-container {
+  flex-direction: column;
+}
+
+@media screen and (min-width: 767px) {
+  .logo {
+    width: 200px;
   }
-  to {
-    transform: rotate(360deg);
+  h1 {
+    font-size: 2.125rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.35rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 991px) {
+
+  .logo {
+    width: 300px;
+  }
+  .search-bar-input{
+  display:block;
+  }
+  .navbar-burger-menu{
+    display:none;
+  } 
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.875rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.4rem;
+  }
+  h5 {
+    font-size: 1.3rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/*# sourceMappingURL=App.css.map */

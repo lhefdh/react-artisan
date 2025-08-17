@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "Graphik";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/src/assets/Graphik_Collection/Graphik_Family/Graphik-Regular-Trial.otf"); /* IE9 Compat Modes */
+}
+
+
+
+$light-color: #f1f8fc;
+$primary-color: #0074c7;
+$dark-blue-color: #00497c;
+$dark-grey-color: #384050;
+$red-color: #cd2c2e;
+$green-color: #82b864;
+
+*{
+    font-family: 'Graphik', sans-serif, 
+}
+nav{
+  padding: 24px 48px;
+  background: $light-color;
+}
+.navbar-container{
+  box-shadow: 0 .2rem .6rem rgba(0,0,0,.0793474);
+}
+.logo{
+  width: 163px;
+  height: auto;
+}
+.navbar-direction{
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+
+h1 {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+h2{
+  font-size: 1.125rem;
+}
+h3{
+  font-size: 1.125rem;
+}
+p{
+  color: $dark-blue-color;
+}
+
+@media screen and (min-width: 767px) {
+  .logo{
+  width: 200px;
+  }
+  h1{
+    font-size: 2.125rem;
+  }
+  h2{
+    font-size: 1.5rem;
+  }
+  h3{
+    font-size: 1.250rem;
+  }
+  h4{
+    font-size: 1.125rem;
+  }
+  h5{
+    font-size: 1rem;
+  }
+
+}  
+@media screen and (min-width: 991px) {
+  .logo{
+  width: 300px;
+  }
+
+  #accordion{
+    display: none !important;
+  }
+  h1{
+    font-size: 2.5rem;
+  }
+  h2{
+    font-size: 1.875rem;
+  }
+  h3{
+    font-size: 1.5rem;
+  }
+
+}  
