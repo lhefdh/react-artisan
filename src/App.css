@@ -7,13 +7,9 @@
 * {
   font-family: "Graphik", sans-serif;
 }
-
-.nav {
+#header-container{
   padding: 24px 48px;
-  background: #f1f8fc;
-}
-
-.navbar-container {
+  background-color: #f1f8fc;
   box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.0793474);
 }
 
@@ -21,7 +17,6 @@
   width: 163px;
   height: auto;
 }
-
 .inline-menu{
   display:none;
 }
@@ -59,6 +54,7 @@ p {
 }
 .home-container{
   padding: 24px 48px;
+  background-color: #f1f8fc;
 }
 .breadcrumb{
   --bs-breadcrumb-divider: url(./assets/arrow-blue-small.svg);
@@ -69,6 +65,60 @@ textarea {
 #home-classement-container {
   flex-direction: column;
 }
+#footer-container{
+  background-color: #0074c7;
+  p, h1, h2, h3, h4, h5, hr, li, a, .footer-vl{
+    color: #f1f8fc;
+  }
+  hr{
+    border-left: 1.5px solid;
+  }
+  .footer-informations{
+    padding: 0px 48px;
+    .footer-logo{
+      margin: 2rem;
+      background-color: #f1f8fc;
+      width:200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+  }
+  .socials{
+    background-color: #f1f8fc;
+    hr{
+      color: #00497c 
+    }
+    ul{
+      li{
+        color: #384050 
+      }
+    }
+  }
+}
+
+
+  
+
+
+
+   
+
+.footer-ul{
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.footer-li{
+  display: inline-block;
+  margin: 0 1.5rem 0.5rem 0;
+}
+.footer-vl{
+  border-left: 1.5px solid;
+  display: inline-block; 
+  margin: 0 10px; 
+  height: 0px;
+}
+
 
 @media screen and (min-width: 767px) {
   .logo {
@@ -88,6 +138,13 @@ textarea {
   }
   h5 {
     font-size: 1.25rem;
+  }
+  #footer-vertical-line-address {
+    height: 200px;
+  }         
+  #Footer-horizontal-line-address{
+    width:0;
+    margin:0;
   }
 }
 @media screen and (min-width: 991px) {
@@ -115,6 +172,13 @@ textarea {
   }
   h5 {
     font-size: 1.3rem;
+  }
+  #footer-vertical-line-legal-notices {
+    height: 200px;
+  }
+  #Footer-horizontal-line-legal-notices{
+    width:0;
+    margin:0;
   }
 }
 

@@ -7,8 +7,8 @@ export default function Header() {
   const [activeContent, setActiveContent] = useState(null);
 
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary w-100">
-      <div class="navbar-container px-5 py-0 d-flex align-items-start container-fluid w-100 ">
+    <nav id="header-container" class="navbar navbar-expand-lg w-100">
+      <div class="navbar-container d-flex align-items-start container-fluid w-100 ">
         <a class="navbar-brand" href="#">
           <img class="logo" src={Logo} alt="Logo" />
         </a>

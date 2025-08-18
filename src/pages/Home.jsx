@@ -108,8 +108,8 @@ export default function Home() {
         </div>
         
       </div>}
-      <h3>4. Une réponse sera apportée sous 48h.</h3>
-      <hr />
+      <h3>Une réponse sera apportée sous 48h.</h3>
+      <hr/>
 
       <h2>4. Nos trois champions du mois</h2>
       <div id="home-classement-container" className="d-flex flex-sm-column align-items-sm-center flex-md-row justify-content-md-evenly flex-md-wrap flex-lg-row justify-content-lg-evenly">
