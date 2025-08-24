@@ -1,16 +1,16 @@
+
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import Logo from '../assets/Logo.png';
-
-
 
 export default function Header() {
   const [activeContent, setActiveContent] = useState(null);
 
   return (
-    <nav id="header-container" class="navbar navbar-expand-lg w-100">
-      <div class="navbar-container d-flex align-items-start container-fluid w-100 ">
-        <a class="navbar-brand" href="#">
-          <img class="logo" src={Logo} alt="Logo" />
+    <nav id="header-container" className="navbar navbar-expand-lg w-100">
+      <div className="navbar-container d-flex align-items-start container-fluid w-100 ">
+        <a className="navbar-brand " href="#">
+          <img className="logo" src={Logo} alt="Logo" />
         </a>
         <div className="ps-auto navbar-direction">
           <form className="d-flex" role="search">
@@ -20,7 +20,7 @@ export default function Header() {
                 placeholder="Search"
                 aria-label="Search"
             />
-            <i class="fa-solid fs-2 fa-magnifying-glass mt-2 mx-2"
+            <i className="fa-solid fs-2 fa-magnifying-glass mt-2 mx-2"
             type="button" 
             onClick={() => setActiveContent('content1')}
             data-bs-toggle="collapse"
@@ -31,7 +31,7 @@ export default function Header() {
             >
             </i>
             <button
-            class="navbar-toggler mx-2"
+            className="navbar-toggler mx-2"
             type="button"
             onClick={() => setActiveContent('content2')}
             data-bs-toggle="collapse"
@@ -40,30 +40,22 @@ export default function Header() {
             aria-expanded="false"
             aria-label="Toggle navigation"
             >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
             </button>
           </form>
           <div className="inline-menu d-sm-none d-md-none d-lg-block">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Accueil
-                </a>
+            <ul className="navbar-nav mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Accueil</NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  Bâtiment
-                </a>
+              <li className="nav-item">
+                <NavLink to="/batiment" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Bâtiment</NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">
-                  Services
-                </a>
+              <li className="nav-item">
+                <NavLink to="/services" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Services</NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">
-                  Fabrication
-                </a>
+              <li className="nav-item">
+                <NavLink to="/fabrication" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Fabrication</NavLink>
               </li>
             </ul>
           </div>
@@ -72,38 +64,30 @@ export default function Header() {
 
       <div>
         {activeContent === 'content1' && (
-            <form className="d-flex collapse px-5 py-4" role="search" id="searchBar">
-              <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Rechercher"
-              /><i 
-              class="fa-solid fa-lg fa-magnifying-glass mt-4 icon"></i>
-            </form>
+          <form className="d-flex collapse px-5 py-4" role="search" id="searchBar">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Rechercher"
+            /><i 
+            className="fa-solid fa-lg fa-magnifying-glass mt-4 icon"></i>
+          </form>
         )}
         {activeContent === 'content2' && (
-          <ul class="navbar-nav mb-2 mb-lg-0 px-5 py-4 navbar-burger-menu">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Accueil
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  Bâtiment
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">
-                  Services
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">
-                  Fabrication
-                </a>
-              </li>
-            </ul>
+          <ul className="navbar-nav mb-2 mb-lg-0 px-5 py-4 navbar-burger-menu">
+            <li className="nav-item">
+              <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} >Accueil</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/batiment" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} >Bâtiment</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/services" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} >Services</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/fabrication" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} >Fabrication</NavLink>
+            </li>
+          </ul>
         )}
         {!activeContent && (
           <div></div>

@@ -1,8 +1,22 @@
-export default function Services() {
+import BreadCrumb from '../components/BreadCrumb'; 
+import Card from '../components/Card';
 
-  return (
+export default function Services({sortedData}) {
+
+  const FilteredProfiles = sortedData.filter(profile =>
+  profile.category === 'Services');
+
+ return (
     <>
-      HEADER
+    <div id="services-container">
+      <BreadCrumb/>
+      <h2>Trouvez votre artisan dans la catégorie de "Services"</h2>
+      <div className="list-container d-flex flex-row justify-content-evenly flex-wrap">
+        {FilteredProfiles.map((item,id)=>(
+          <Card item={item} key={id}/>
+        ))}
+      </div>
+    </div>
     </>
   )
 }
