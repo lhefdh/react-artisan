@@ -1,18 +1,24 @@
 import  { useState} from 'react';
 import BreadCrumb from '../components/BreadCrumb';
+import Results from '../components/Results';
 import ContactForm from '../components/ContactForm';
 import { NavLink } from 'react-router-dom';
 
 
-export default function Home({craftsman, sortedData, onSetCraftsman}) {
+
+export default function Home({craftsman, sortedData, onSetCraftsman, searchText}) {
 
 const [category, setCategory]=useState('');
-    
+
+
+
+      
  const handleCategory =(e)=>setCategory(e.target.value)
   // pour exclure les doublons dans la liste (select)
   const uniqueData = Array.from(new Map(sortedData.map(profile => [profile.category, profile])).values());
   const FilteredProfiles = sortedData.filter(profile =>
     profile.category === category);
+  
 
 
   const handleCraftsman = (e) => {
@@ -28,14 +34,11 @@ const [category, setCategory]=useState('');
   }
 
 
-
-
-  
-
   return (
     
     <div id="home-container">
       <BreadCrumb/>
+      <Results searchText={searchText} sortedData={sortedData}/>
       <h1>Comment trouver mon artisan?</h1>
       <label>
       {(category === '')? <h3 >1. Choisissez la catégorie d’artisanat</h3> : <h3 >1. Vous avez choisit la catégorie "<strong>{category}</strong>"</h3>}

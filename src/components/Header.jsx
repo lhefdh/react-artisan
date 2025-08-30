@@ -3,8 +3,18 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import Logo from '../assets/Logo.png';
 
-export default function Header() {
+export default function Header({ onSetSearchText}) {
+
   const [activeContent, setActiveContent] = useState(null);
+
+  const inputHandler = (e) => {
+    e.preventDefault();
+    const lowerCase = e.target.value.toLowerCase();
+    onSetSearchText(lowerCase);
+  };
+
+
+
 
   return (
     <nav id="header-container" className="navbar navbar-expand-lg w-100">
@@ -13,12 +23,13 @@ export default function Header() {
           <img className="logo" src={Logo} alt="Logo" />
         </a>
         <div className="ps-auto navbar-direction">
-          <form className="d-flex" role="search">
+          <form className="d-flex" role="search" >
             <input
                 className="search-bar-input form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                onChange={inputHandler}
             />
             <i className="fa-solid fs-2 fa-magnifying-glass mt-2 mx-2"
             type="button" 

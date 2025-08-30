@@ -92,6 +92,7 @@ p {
 
 
 #header-container {
+  background-color: $light-color;
   box-shadow: 0 0.2rem 0.6rem $dark-grey-color;
 
   .logo {
@@ -128,7 +129,7 @@ p {
   } 
 }
 
-#header-container, #home-container, #building-container, 
+#home-container, #building-container, 
 #services-container, #manufacturing-container, #craftsman-container{
   padding: 24px 48px;
   background-color: $light-color;
@@ -150,17 +151,26 @@ p {
 
 }
 #craftsman-container{
-  .craftsman-title{
+  .craftsman-card-container{
+    max-width: 60vw;
+    .craftsman-title{
       color: $primary-color;
     }
-  .card{
-    background-color: $dark-grey-color;
-    color: $light-color;
-    .card-body{
-      max-width: 80%; 
-      .text-justify{
-        text-align: justify;
-        color: $light-color;
+    .card{
+      background-color: $dark-grey-color;
+      color: $light-color;
+      .card-body{ 
+        .text-justify{
+          text-align: justify;
+          color: $light-color;
+          a {
+            color: $light-color;
+          }
+          a :hover{
+            color:$primary-color;
+          }
+        }
+
       }
     }
   }

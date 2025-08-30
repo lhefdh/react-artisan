@@ -15,6 +15,7 @@ export default function App() {
 
   const [craftsman, setCraftsman] = useState('');
   const [sortedData, setSortedData] = useState([]);
+  const [searchText, setSearchText] = useState('');
   
   useEffect(() => {
 
@@ -27,12 +28,13 @@ export default function App() {
   }, []);
 
 
+
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header searchText={searchText} onSetSearchText={setSearchText}/>
         <Routes>
-          <Route path='/' element={<Home craftsman={craftsman} sortedData={sortedData} onSetCraftsman={setCraftsman}/>}></Route>
+          <Route path='/' element={<Home craftsman={craftsman} sortedData={sortedData} onSetCraftsman={setCraftsman} searchText={searchText}/>}></Route>
           <Route path='/batiment' element={<Building sortedData={sortedData}/>}/>
           <Route path='/services' element={<Services sortedData={sortedData}/>}/>
           <Route path='/fabrication' element={<Manufacturing sortedData={sortedData}/>}/>
