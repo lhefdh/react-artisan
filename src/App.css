@@ -99,6 +99,7 @@ p {
 }
 
 #header-container {
+  background-color: #f1f8fc;
   box-shadow: 0 0.2rem 0.6rem #384050;
 }
 #header-container .logo {
@@ -138,7 +139,7 @@ p {
   font-weight: 900;
 }
 
-#header-container, #home-container, #building-container,
+#home-container, #building-container,
 #services-container, #manufacturing-container, #craftsman-container {
   padding: 24px 48px;
   background-color: #f1f8fc;
@@ -158,19 +159,25 @@ p {
   color: #f1f8fc;
 }
 
-#craftsman-container .craftsman-title {
+#craftsman-container .craftsman-card-container {
+  max-width: 60vw;
+}
+#craftsman-container .craftsman-card-container .craftsman-title {
   color: #0074c7;
 }
-#craftsman-container .card {
+#craftsman-container .craftsman-card-container .card {
   background-color: #384050;
   color: #f1f8fc;
 }
-#craftsman-container .card .card-body {
-  max-width: 80%;
-}
-#craftsman-container .card .card-body .text-justify {
+#craftsman-container .craftsman-card-container .card .card-body .text-justify {
   text-align: justify;
   color: #f1f8fc;
+}
+#craftsman-container .craftsman-card-container .card .card-body .text-justify a {
+  color: #f1f8fc;
+}
+#craftsman-container .craftsman-card-container .card .card-body .text-justify a :hover {
+  color: #0074c7;
 }
 
 #footer-container {
