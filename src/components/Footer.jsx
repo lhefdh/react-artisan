@@ -5,7 +5,7 @@ import Logo from '../assets/Logo.png';
 export default function Footer() {
 
   return (
-    <div id="footer-container" className="d-flex flex-column align-items-center">
+    <footer id="footer-container" className="d-flex flex-column align-items-center">
       <div className="footer-informations d-flex flex-row col-12 justify-content-center flex-wrap">
         <NavLink to="/" className="footer-logo-container col-xs-12 col-sm-12 col-md-12 col-sm-12 col-xs-12 col-lg-3 me-xs-auto me-sm-auto me-md-auto">
           <img className="footer-logo" src={Logo} alt="Logo"/>
@@ -67,6 +67,6 @@ export default function Footer() {
           </a>
         </ul>
       </div>
-    </div>
+    </footer>
   )
 }

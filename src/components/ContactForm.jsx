@@ -10,11 +10,14 @@ const initialForm = {
   message: ''
   }
 export default function ContactForm() {
-
+  // State pour gérer les données saisies
   const [contactInputs, setContactInputs] = useState(initialForm);
+  // State pour définir le début et la fin du Submit
   const [isLoading, setIsLoading] = useState(false);
+  // State pour qui sera chargé d'un objet qui décrit l'issue de l'opération
   const [result, setResult] = useState(null);
- const [error, setError] = useState(false);
+  // State pour gérer les erreurs
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

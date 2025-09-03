@@ -35,10 +35,10 @@ export default function App() {
         <Header searchText={searchText} onSetSearchText={setSearchText}/>
         <Routes>
           <Route path='/' element={<Home craftsman={craftsman} sortedData={sortedData} onSetCraftsman={setCraftsman} searchText={searchText}/>}></Route>
-          <Route path='/batiment' element={<Building sortedData={sortedData}/>}/>
-          <Route path='/services' element={<Services sortedData={sortedData}/>}/>
-          <Route path='/fabrication' element={<Manufacturing sortedData={sortedData}/>}/>
-          <Route path='/craftsman/:id' element={<Craftsman craftsman={craftsman} />}/>
+          <Route path='/batiment' element={<Building sortedData={sortedData} searchText={searchText}/>}/>
+          <Route path='/services' element={<Services sortedData={sortedData} searchText={searchText}/>}/>
+          <Route path='/fabrication' element={<Manufacturing sortedData={sortedData} searchText={searchText}/>}/>
+          <Route path='/craftsman/:id' element={<Craftsman craftsman={craftsman} searchText={searchText}/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -99,6 +99,7 @@ p {
 }
 
 #header-container {
+  padding: 24px 48px;
   background-color: #f1f8fc;
   box-shadow: 0 0.2rem 0.6rem #384050;
 }
@@ -129,7 +130,7 @@ p {
     display: block;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   #header-container .navbar-burger-menu {
     display: none;
   }
