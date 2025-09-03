@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Logo from '../assets/Logo.png';
 
 
@@ -6,9 +7,9 @@ export default function Footer() {
   return (
     <div id="footer-container" className="d-flex flex-column align-items-center">
       <div className="footer-informations d-flex flex-row col-12 justify-content-center flex-wrap">
-        <a href="#" className="footer-logo-container col-xs-12 col-sm-12 col-md-12 col-sm-12 col-xs-12 col-lg-3 me-xs-auto me-sm-auto me-md-auto">
+        <NavLink to="/" className="footer-logo-container col-xs-12 col-sm-12 col-md-12 col-sm-12 col-xs-12 col-lg-3 me-xs-auto me-sm-auto me-md-auto">
           <img className="footer-logo" src={Logo} alt="Logo"/>
-        </a>
+        </NavLink >
         <div className="col-xs-9 col-sm-9 col-md-3 col-lg-2 px-0 mx-0">
           <h5>Conseil régional</h5>
           <h5>Auvergne-Rhône-Alpes</h5>
@@ -46,12 +47,24 @@ export default function Footer() {
       <div className="socials w-100 d-flex flex-column align-items-center">
         <hr className="col-9"/>
         <ul className="p-1 m-1">
-          <li className="fa-brands fa-instagram pe-4 fs-2"/>
-          <li className="fa-brands fa-twitter pe-4 fs-2"/>
-          <li className="fa-brands fa-linkedin pe-4 fs-2"/>
-          <li className="fa-brands fa-facebook pe-4 fs-2"/>
-          <li className="fa-brands fa-youtube pe-4 fs-2"/>
-          <li className="fa-brands fa-whatsapp pe-4 fs-2"/>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <li className="fa-brands fa-instagram pe-4 fs-2"/>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <li className="fa-brands fa-twitter pe-4 fs-2"/>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <li className="fa-brands fa-linkedin pe-4 fs-2"/>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <li className="fa-brands fa-facebook pe-4 fs-2"/>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <li className="fa-brands fa-youtube pe-4 fs-2"/>
+          </a>
+          <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
+            <li className="fa-brands fa-whatsapp pe-4 fs-2"/>
+          </a>
         </ul>
       </div>
     </div>

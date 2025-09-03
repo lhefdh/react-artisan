@@ -1,13 +1,13 @@
 import { useLocation } from 'react-router-dom'
 
-export default function BreadCrumb() {
+export default function BreadCrumb({selectedCraftsman}) {
 
 const location = useLocation();
 const currentPage = location.pathname === '/batiment'? 'Bâtiment'
                   : location.pathname === '/services' ? 'Services'
                   : location.pathname === '/fabrication' ? 'Fabrication' 
                   : location.pathname === '/craftsman' ? 'Votre Artisan'
-                  : '';
+                  : selectedCraftsman;
 
   return (
     <>

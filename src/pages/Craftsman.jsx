@@ -12,7 +12,7 @@ export default function  Craftsman () {
     return (
     <>
       <div id="craftsman-container" className="d-flex flex-column align-items-start">
-        <BreadCrumb/>
+        <BreadCrumb selectedCraftsman={selectedCraftsman.name}/>
         <div className="craftsman-card-container align-self-center">
           <h2 className="craftsman-title mb-3">Consultez la Fiche de votre artisan</h2>
           <div className="card d-flex flex-column justify-content-center align-items-center">

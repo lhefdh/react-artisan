@@ -19,9 +19,9 @@ export default function Header({ onSetSearchText}) {
   return (
     <nav id="header-container" className="navbar navbar-expand-lg w-100">
       <div className="navbar-container d-flex align-items-start container-fluid w-100 ">
-        <a className="navbar-brand " href="#">
+        <NavLink to="/" className="navbar-brand " >
           <img className="logo" src={Logo} alt="Logo" />
-        </a>
+        </NavLink>
         <div className="ps-auto navbar-direction">
           <form className="d-flex" role="search" >
             <input
