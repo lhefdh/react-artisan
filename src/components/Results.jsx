@@ -7,7 +7,6 @@ const results = sortedData.filter(profile =>
     || profile.location.toLowerCase().includes(searchText)
     || profile.specialty.toLowerCase().includes(searchText));
 
-
   return (
     <>
     {(searchText!='') &&

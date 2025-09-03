@@ -180,6 +180,31 @@ p {
   color: #0074c7;
 }
 
+#contactForm-container {
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+#contactForm-container .contactForm-success {
+  margin-top: 20px;
+  padding: 8px;
+  max-width: fit-content;
+  background-color: #f1f8fc;
+  border: 1px solid #82b864;
+  border-radius: 5px;
+  color: #82b864;
+}
+#contactForm-container .contactForm-failed {
+  margin-top: 20px;
+  padding: 8px;
+  max-width: fit-content;
+  background-color: #f1f8fc;
+  border: 1px solid #cd2c2e;
+  border-radius: 5px;
+  color: #cd2c2e;
+}
+
 #footer-container {
   background-color: #0074c7;
 }
