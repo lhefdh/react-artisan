@@ -92,6 +92,7 @@ p {
 
 
 #header-container {
+  padding: 24px 48px;
   background-color: $light-color;
   box-shadow: 0 0.2rem 0.6rem $dark-grey-color;
 
@@ -118,7 +119,7 @@ p {
   }
 
   .navbar-burger-menu{
-    @include for-large-screens {
+    @include for-medium-screens {
       display:none;
     }
   }
