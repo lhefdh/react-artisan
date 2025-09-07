@@ -4,11 +4,10 @@ import Card from '../components/Card';
 
 export default function Services({sortedData, searchText}) {
 
-  const FilteredProfiles = sortedData.filter(profile =>
-  profile.category === 'Services');
-  console.log(FilteredProfiles)
+const FilteredProfiles = sortedData.filter(profile =>
+profile.category === 'Services');
 
- return (
+  return (
 
     <main id="services-container">
       <BreadCrumb/>

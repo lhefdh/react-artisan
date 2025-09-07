@@ -150,12 +150,33 @@ p {
 #home-container textarea {
   width: 100%;
 }
-#home-container .craftsman-list {
+#home-container .dropdown .category-dropdown {
+  min-width: 250px;
+  text-align: center;
+  background-color: #00497c;
+  color: #f1f8fc;
+}
+#home-container .dropdown .dropdown-menu {
+  width: 100%;
+  max-height: 300px;
+}
+#home-container .dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #384050;
+  color: white;
+}
+#home-container .dropdown .dropdown-menu .dropdown-item {
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+#home-container #craftsman-list-card {
+  background-color: #f1f8fc;
+}
+#home-container #craftsman-list-card .craftsman-list {
   width: 100%;
   height: 2rem;
   padding: 0.1rem;
 }
-#home-container .craftsman-list:hover {
+#home-container #craftsman-list-card .craftsman-list:hover {
   background-color: #384050;
   color: #f1f8fc;
 }
@@ -206,10 +227,19 @@ p {
   color: #cd2c2e;
 }
 
+#craftsman-card:hover {
+  background-color: #00497c;
+  text-decoration: none;
+  color: #f1f8fc !important;
+}
+#craftsman-card:hover .card-tite, #craftsman-card:hover .card-subtitle {
+  color: #f1f8fc !important;
+}
+
 #footer-container {
   background-color: #0074c7;
 }
-#footer-container p, #footer-container h1, #footer-container h2, #footer-container h3, #footer-container h4, #footer-container h5, #footer-container hr, #footer-container li, #footer-container a, #footer-container .footer-vl {
+#footer-container p, #footer-container h1, #footer-container h2, #footer-container h3, #footer-container h4, #footer-container h5, #footer-container hr, #footer-container a, #footer-container .footer-vl, #footer-container .footer-ul {
   color: #f1f8fc;
 }
 #footer-container .footer-informations {
@@ -235,6 +265,9 @@ p {
   display: inline-block;
   margin: 0 10px;
   height: 0px;
+}
+#footer-container .footer-informations #footer-horizontal-line-address {
+  height: 1px;
 }
 @media (min-width: 768px) {
   #footer-container .footer-informations #footer-horizontal-line-address {
@@ -268,7 +301,7 @@ p {
 #footer-container .socials hr {
   color: #00497c;
 }
-#footer-container .socials ul li {
+#footer-container .socials .icons-list a .footer-icons {
   color: #384050;
 }
 

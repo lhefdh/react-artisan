@@ -6,7 +6,7 @@ import datas from '../datas.json';
 import ContactForm from '../components/ContactForm';
   
 
-export default function  Craftsman (sortedData, searchText) {
+export default function  Craftsman (searchText) {
   const {id} = useParams()
   const selectedCraftsman = datas.find(profile => profile.id === id)
 
@@ -15,7 +15,7 @@ export default function  Craftsman (sortedData, searchText) {
       <main id="craftsman-container" className="d-flex flex-column align-items-start">
         <BreadCrumb selectedCraftsman={selectedCraftsman.name}/>
         {/* affichege des résultats de la recherche */}
-          <Results searchText={searchText} sortedData={sortedData}/>
+          <Results searchText={searchText}/>
         <div className="craftsman-card-container align-self-center">
           <h2 className="craftsman-title mb-3">Consultez la Fiche de votre artisan</h2>
           <article className="card d-flex flex-column justify-content-center align-items-center">
