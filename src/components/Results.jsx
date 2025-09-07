@@ -1,8 +1,10 @@
 import Card from '../components/Card';
+import datas from '../datas.json'; 
 
-export default function Results({sortedData, searchText}) {
-
-const results = sortedData.filter(profile =>
+export default function Results({searchText}) {
+// Trie les données par la "note"
+  const sortedList = datas.sort((a, b) => b.note - a.note); // Tri décroissant
+  const results = sortedList.filter(profile =>
     profile.name.toLowerCase().includes(searchText)
     || profile.location.toLowerCase().includes(searchText)
     || profile.specialty.toLowerCase().includes(searchText));

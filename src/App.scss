@@ -9,16 +9,19 @@ $breakpoint-medium: 768px;
 $breakpoint-large: 992px;
 
 @mixin for-medium-screens {
-      @media (min-width: $breakpoint-medium) {
-        @content;
-      }
-    }
+  @media (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
 
-    @mixin for-large-screens {
-      @media (min-width: $breakpoint-large) {
-        @content;
-      }
-    }
+@mixin for-large-screens {
+  @media (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+
+
 
 $light-color: #f1f8fc;
 $primary-color: #0074c7;
@@ -26,6 +29,7 @@ $dark-blue-color: #00497c;
 $dark-grey-color: #384050;
 $red-color: #cd2c2e;
 $green-color: #82b864;
+
 
 * {
   font-family: "Graphik", sans-serif;
@@ -140,16 +144,41 @@ p {
   textarea {
     width: 100%;
   }
-  .craftsman-list{
-    width: 100%;
-    height: 2rem;
-    padding: 0.1rem;
+  .dropdown{
+    
+    .category-dropdown {
+      min-width: 250px;
+      text-align: center;
+      background-color: $dark-blue-color;
+      color: #f1f8fc;
+    }
+    .dropdown-menu {
+      width: 100%;
+      max-height: 300px;
+      .dropdown-item:hover {
+        background-color: $dark-grey-color;
+        color: white;
+      }
+      .dropdown-item {
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+      }
+    }
   }
-  .craftsman-list:hover{
-    background-color: $dark-grey-color;
-    color:$light-color;
-  }
+  #craftsman-list-card{
+    background-color: $light-color;
+    .craftsman-list{
+      width: 100%;
+      height: 2rem;
+      padding: 0.1rem;
+    }
 
+    .craftsman-list:hover{
+      background-color: $dark-grey-color;
+      color:$light-color;
+    }
+  }
+  
 }
 #craftsman-container{
   .craftsman-card-container{
@@ -201,11 +230,22 @@ p {
   }
 }
 
+
+#craftsman-card:hover{
+  background-color: $dark-blue-color;
+  text-decoration: none;
+  color: $light-color!important;
+  .card-tite, .card-subtitle{
+    color: $light-color!important;
+  }
+}
+
 #footer-container{
   background-color: $primary-color;
-  p, h1, h2, h3, h4, h5, hr, li, a, .footer-vl{
+  p, h1, h2, h3, h4, h5, hr, a, .footer-vl, .footer-ul{
     color: $light-color;
   }
+
   .footer-informations{
     padding: 24px 48px;
     .footer-logo-container{
@@ -230,6 +270,7 @@ p {
       height: 0px;
     }
     #footer-horizontal-line-address{
+      height: 1px;
       @include for-medium-screens {
         width:0;
         margin:0;
@@ -262,9 +303,11 @@ p {
     hr{
       color: $dark-blue-color;
     }
-    ul{
-      li{
-        color: $dark-grey-color;
+    .icons-list{
+      a{
+        .footer-icons{
+          color: $dark-grey-color;
+        }
       }
     }
   }

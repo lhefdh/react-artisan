@@ -2,18 +2,14 @@ import  { useState} from 'react';
 import BreadCrumb from '../components/BreadCrumb';
 import Results from '../components/Results';
 import ContactForm from '../components/ContactForm';
-import { NavLink } from 'react-router-dom';
+import Card from '../components/Card';
 
 
 
 export default function Home({craftsman, sortedData, onSetCraftsman, searchText}) {
 
-const [category, setCategory]=useState('');
-
-
-
-      
- const handleCategory =(e)=>setCategory(e.target.value)
+  const [category, setCategory]=useState(''); 
+  const handleCategory =(e)=>setCategory(e.target.value)
   // pour exclure les doublons dans la liste des catégories
   const uniqueData = Array.from(new Map(sortedData.map(profile => [profile.category, profile])).values());
   // filtrer les artisans par catégorie
@@ -37,20 +33,45 @@ const [category, setCategory]=useState('');
       {/* Etapes pour choisir l'artisan */}
       <section>
         <h1>Comment trouver mon artisan?</h1>
-        {/* changement de titre aprés le choix de la catégorie */}
-        {(category === '')? <h3 >1. Choisissez la catégorie d’artisanat</h3> : <h3 >1. Vous avez choisit la catégorie "<strong>{category}</strong>"</h3>}
-        {(craftsman === '') && (category === '') && 
-          <select className="btn btn-secondary dropdown-toggle" onChange={handleCategory} type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-            <option value="">--Choisissez la catégorie--</option>
-            {uniqueData.map((data)=>(<option key={data.category} value={data.category}>{data.category}</option>))}
-          </select>
-        }
+        <div className="category-selection d-flex flex-column">
+          {(category === '') ? 
+            <h3>1. Choisissez la catégorie d'artisanat</h3> : 
+            <h3>1. Vous avez choisi la catégorie "<strong>{category}</strong>"</h3>
+          }
+          {(craftsman === '' && category === '') && 
+            <div className="dropdown align-self-center">
+              <button 
+                  className="btn dropdown-toggle category-dropdown" 
+                  type="button" 
+                  data-bs-toggle="dropdown"
+              >
+                --Choisissez la catégorie--
+              </button>
+              <ul className="dropdown-menu">
+                {uniqueData.map((data) => (
+                  <li key={data.category}>
+                    <a 
+                        className="dropdown-item" 
+                        href="#" 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleCategory({target: {value: data.category}});
+                        }}
+                    >
+                      {data.category}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          }
+        </div>
+        
         {/* changement de titre aprés le choix de l'artisan */}
         {(craftsman ==='')? <h3>2. Choisissez votre artisan {category && `dans la catégorie "${category}"`}</h3> : <h3 >2. L'artisan choisit est:</h3>}
         {(category && (craftsman === '')) &&
           <div className="d-flex justify-content-center ">
-            <div className="card col-sm-8 col-md-6 col-lg-4">
+            <div id="craftsman-list-card" className="card col-sm-8 col-md-6 col-lg-4">
               <div className="card-body ">
                 {FilteredProfiles.map((item,id)=>(
                 <h5 className="card-title craftsman-list d-flex justify-content-center" onClick={handleCraftsman} value={item.name} key={id}>{item.name}</h5>))
@@ -61,16 +82,9 @@ const [category, setCategory]=useState('');
         }
 
         {craftsman &&
-          <div className="d-flex justify-content-center"  >
+          <div className="d-flex justify-content-center" onClick={clearchoices}  >
             {/* la méthode clearchoices est appelée pour réinitialiser les State, ainsi un retour de la page Craftsman vers la page d'accueil permettra de choisir à nouveau */}
-            <NavLink to={`/craftsman/${craftsman.id}`} className="card col-sm-8 col-md-6 col-lg-4" onClick={clearchoices}  value={craftsman.name}>
-              <div className="card-body">
-                <h5 className="card-title d-flex justify-content-center"><strong>{craftsman.name}</strong></h5>
-                <h6 className="card-subtitle mb-2 text-muted">Spécialité: <strong>{craftsman.specialty}</strong></h6>
-                <h6 className="card-subtitle mb-2 text-muted">Note: <strong>{craftsman.note}</strong></h6>
-                <h6 className="card-subtitle mb-2 text-muted">Localisation: <strong>{craftsman.location}</strong></h6>
-              </div>
-            </NavLink>
+            <Card item={craftsman} id={craftsman.id} key={craftsman.id}/>
           </div>
         }
 
@@ -91,16 +105,9 @@ const [category, setCategory]=useState('');
       <article>
         <h2>Nos trois champions du mois</h2>
         <div className="d-flex flex-row justify-content-evenly flex-wrap">
-          {sortedData.slice(0, 3).map((item,id) => (
+          {sortedData.slice(0, 3).map((item) => (
           // le params sera récupérer dans la page Craftsman pour définir quel artisan à afficher
-          <NavLink to={`/craftsman/${item.id}`} className="card col-sm-8 col-md-5 col-lg-3 mt-2" onClick={clearchoices} value={item.name} key={id}>
-            <div className="card-body">
-              <h5 className="card-title d-flex justify-content-center"><strong>{item.name}</strong></h5>
-              <h6 className="card-subtitle mb-2 text-muted">Spécialité: <strong>{item.specialty}</strong></h6>
-              <h6 className="card-subtitle mb-2 text-muted">Note: <strong>{item.note}</strong></h6>
-              <h6 className="card-subtitle mb-2 text-muted">Localisation: <strong>{item.location}</strong></h6>
-            </div>
-          </NavLink>
+          <Card item={item} id={item.id} key={item.id}/>
             ))}
         </div>
       </article>

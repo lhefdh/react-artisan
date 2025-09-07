@@ -20,7 +20,7 @@ export default function App() {
   useEffect(() => {
 
 
-    // Trie les données par la clé "note" (par exemple)
+    // Trie les données par la "note"
     const sortedList = datas.sort((a, b) => b.note - a.note); // Tri décroissant
 
     setSortedData(sortedList);

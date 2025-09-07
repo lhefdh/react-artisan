@@ -46,26 +46,26 @@ export default function Footer() {
       </div>
       <div className="socials w-100 d-flex flex-column align-items-center">
         <hr className="col-9"/>
-        <ul className="p-1 m-1">
+        <div className="icons-list p-1 m-1">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <li className="fa-brands fa-instagram pe-4 fs-2"/>
+            <i className="footer-icons fa-brands fa-instagram pe-4 fs-2"/>
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <li className="fa-brands fa-twitter pe-4 fs-2"/>
+            <li className="footer-icons fa-brands fa-twitter pe-4 fs-2"/>
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <li className="fa-brands fa-linkedin pe-4 fs-2"/>
+            <li className="footer-icons fa-brands fa-linkedin pe-4 fs-2"/>
           </a>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <li className="fa-brands fa-facebook pe-4 fs-2"/>
+            <li className="footer-icons fa-brands fa-facebook pe-4 fs-2"/>
           </a>
           <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-            <li className="fa-brands fa-youtube pe-4 fs-2"/>
+            <li className="footer-icons fa-brands fa-youtube pe-4 fs-2"/>
           </a>
           <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
-            <li className="fa-brands fa-whatsapp pe-4 fs-2"/>
+            <li className="footer-icons fa-brands fa-whatsapp pe-4 fs-2"/>
           </a>
-        </ul>
+        </div>
       </div>
     </footer>
   )
