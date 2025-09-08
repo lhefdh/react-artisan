@@ -141,7 +141,8 @@ p {
 }
 
 #home-container, #building-container,
-#services-container, #manufacturing-container, #craftsman-container {
+#services-container, #manufacturing-container,
+#craftsman-container {
   padding: 24px 48px;
   background-color: #f1f8fc;
   min-height: 40vh;
@@ -303,6 +304,19 @@ p {
 }
 #footer-container .socials .icons-list a .footer-icons {
   color: #384050;
+}
+
+#notFound-container {
+  padding: 24px 48px;
+  background-color: #f1f8fc;
+  height: 100vh;
+  color: #00497c;
+}
+#notFound-container .warming, #notFound-container .home-icon, #notFound-container p {
+  color: #cd2c2e;
+}
+#notFound-container p {
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=app.css.map */
