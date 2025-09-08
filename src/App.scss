@@ -135,7 +135,8 @@ p {
 }
 
 #home-container, #building-container, 
-#services-container, #manufacturing-container, #craftsman-container{
+#services-container, #manufacturing-container, 
+#craftsman-container{
   padding: 24px 48px;
   background-color: $light-color;
   min-height: 40vh;
@@ -310,5 +311,17 @@ p {
         }
       }
     }
+  }
+}
+#notFound-container{
+  padding: 24px 48px;
+  background-color: $light-color;
+  height: 100vh;
+  color: $dark-blue-color;
+  .warming, .home-icon, p{
+    color: $red-color;
+  }
+  p{
+    font-size: 2rem;
   }
 }
