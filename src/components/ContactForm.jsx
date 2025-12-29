@@ -17,12 +17,26 @@ export default function ContactForm() {
   // State pour qui sera chargé d'un objet qui décrit l'issue de l'opération
   const [result, setResult] = useState(null);
   // State pour gérer les erreurs
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+     // 🔴 Validation des champs vides
+    const hasEmptyField = Object.values(contactInputs).some(
+      value => value.trim() === ''
+    );
+
+    if (hasEmptyField) {
+      setError('Tous les champs sont requis');
+      setResult(null);
+      return; // ⛔ stop l'envoi
+    }
+    setError('');
     setIsLoading(true);
     setResult(null);
+
+    Object.values(contactInputs).some(value => value.trim() === '')
+
 
     try {
       const headers = {
@@ -44,8 +58,9 @@ export default function ContactForm() {
 
       if (data.success) {
         setContactInputs(initialForm);
+        setTimeout(() => setResult(null), 5000);
       } else {
-        setError(true);
+        setError(data.message || 'Une erreur est survenue');
       }
       
     } catch (error) {
@@ -54,6 +69,7 @@ export default function ContactForm() {
         success: false, 
         message: 'Erreur de connexion au serveur: ' + error.message
       });
+      setError('Erreur de connexion au serveur')
     } finally {
       setIsLoading(false);
     }
@@ -118,17 +134,20 @@ export default function ContactForm() {
             </div>
           </div>
         </form>
-        {(result && !error)? (
-          <div className="contactForm-success">
-            <i className="fa-solid fa-square-check fa-xl mx-2"></i>
-            <h3 className="d-inline">Email envoyé avec succès!</h3>
-          </div>
-        ): (result && error)? (
+        {error && (
         <div className="contactForm-failed">
-          <i class="fa-solid fa-circle-exclamation fa-xl mx-2"></i>
-          <h3 className="d-inline">Tous les champs sont requis!</h3>
+          <i className="fa-solid fa-circle-exclamation fa-xl mx-2"></i>
+          <h3 className="d-inline">{error}</h3>
         </div>
-        ) : ''}
+        )}
+        {result?.success && (
+        <div className="contactForm-success">
+          <i className="fa-solid fa-circle-check fa-xl mx-2"></i>
+          <h3 className="d-inline">
+            Message envoyé avec succès !
+          </h3>
+        </div>
+      )}
     </div>
   )
 }
