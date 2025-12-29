@@ -36,7 +36,7 @@ $green-color: #82b864;
 }
 h1 {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   @include for-medium-screens {
     font-size: 2.125rem;
   }
@@ -45,7 +45,7 @@ h1 {
   }
 }
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   @include for-medium-screens {
     font-size: 1.5rem;
   }
@@ -54,7 +54,7 @@ h2 {
   }
 }
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   @include for-medium-screens {
     font-size: 1.35rem;
   }
@@ -63,7 +63,7 @@ h3 {
   }
 }
 h4 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   @include for-medium-screens {
     font-size: 1.30rem;
   }
@@ -72,7 +72,7 @@ h4 {
   }
 }
 h5 {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   @include for-medium-screens {
     font-size: 1.25rem;
   }
@@ -96,9 +96,12 @@ p {
 
 
 #header-container {
-  padding: 24px 48px;
+  padding: 0px 30px;
   background-color: $light-color;
   box-shadow: 0 0.2rem 0.6rem $dark-grey-color;
+  @include for-large-screens {
+    padding: 24px 48px;
+  }
 
   .logo {
     width: 163px;
@@ -137,9 +140,13 @@ p {
 #home-container, #building-container, 
 #services-container, #manufacturing-container, 
 #craftsman-container{
-  padding: 24px 48px;
+
+  padding: 16px 30px;
   background-color: $light-color;
   min-height: 40vh;
+  @include for-large-screens {
+    padding: 24px 48px;
+  }
 }
 #home-container{
   textarea {
@@ -201,7 +208,6 @@ p {
             color:$primary-color;
           }
         }
-
       }
     }
   }
@@ -231,7 +237,6 @@ p {
   }
 }
 
-
 #craftsman-card:hover{
   background-color: $dark-blue-color;
   text-decoration: none;
@@ -246,59 +251,60 @@ p {
   p, h1, h2, h3, h4, h5, hr, a, .footer-vl, .footer-ul{
     color: $light-color;
   }
-
-  .footer-informations{
+  padding: 16px 30px;
+  @include for-large-screens {
     padding: 24px 48px;
-    .footer-logo-container{
-      margin:0;
-    }
-    .footer-logo{
-      margin: 0 0 2rem 0;
-      background-color: $light-color;
-      width:200px;
+  }
+  .footer-logo-container{
+    margin:0;
+  }
+  .footer-logo{
+    margin: 0 0 2rem 0;
+    background-color: $light-color;
+    width:200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  #footer-vertical-line-address{
+    @include for-medium-screens {
       height: 200px;
-      border-radius: 50%;
-    }
-    #footer-vertical-line-address{
-      @include for-medium-screens {
-        height: 200px;
-      }
-    }
-    .footer-vl{
-      border-left: 1.5px solid;
-      display: inline-block; 
-      margin: 0 10px; 
-      height: 0px;
-    }
-    #footer-horizontal-line-address{
-      height: 1px;
-      @include for-medium-screens {
-        width:0;
-        margin:0;
-      }
-    }
-    #footer-horizontal-line-legal-notices{
-      @include for-large-screens {
-        width:0!important;
-        margin:0;
-      }
-    }
-    #footer-vertical-line-legal-notices{
-      @include for-large-screens {
-        height: 200px;
-      }
-    }
-    
-    .footer-ul{
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-      .footer-li{
-        display: inline-block;
-        margin: 0 1.5rem 0.5rem 0;
-      }
     }
   }
+  .footer-vl{
+    border-left: 1.5px solid;
+    display: inline-block; 
+    margin: 0 10px; 
+    height: 0px;
+  }
+  #footer-horizontal-line-address{
+    height: 1px;
+    @include for-medium-screens {
+      width:0;
+      margin:0;
+    }
+  }
+  #footer-horizontal-line-legal-notices{
+    @include for-large-screens {
+      width:0!important;
+      margin:0;
+    }
+  }
+  #footer-vertical-line-legal-notices{
+    @include for-large-screens {
+      height: 200px;
+    }
+  }
+  
+  .footer-ul{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    .footer-li{
+      display: inline-block;
+      margin: 0 1.5rem 0.5rem 0;
+    }
+  }
+  
   .socials{
     background-color: $light-color;
     hr{

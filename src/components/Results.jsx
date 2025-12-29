@@ -11,7 +11,7 @@ export default function Results({searchText}) {
 
   return (
     <>
-    {(searchText!='') &&
+    {(searchText !='') &&
     <div>
       <h2>Vos résultats de recherche</h2>
       <div className="list-container d-flex flex-row justify-content-evenly flex-wrap">

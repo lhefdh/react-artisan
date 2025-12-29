@@ -19,7 +19,7 @@ export default function Header({ onSetSearchText}) {
 
   return (
     <header id="header-container" className="navbar navbar-expand-lg w-100">
-      <div className="navbar-container d-flex align-items-start container-fluid w-100 ">
+      <div className="navbar-container d-flex align-items-start container-fluid w-100 px-0 ">
         <NavLink to="/" className="navbar-brand " >
           <img className="logo" src={Logo} alt="Logo" />
         </NavLink>
