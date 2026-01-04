@@ -4,6 +4,7 @@ import Card from '../components/Card';
 
 export default function Manufacturing({sortedData, searchText}) {
 
+  // Filtre les profils pour ne garder que ceux de la catégorie "Fabrication"
   const FilteredProfiles = sortedData.filter(profile =>
    profile.category === 'Fabrication');
   return (

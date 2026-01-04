@@ -4,6 +4,7 @@ import Card from '../components/Card';
 
 export default function Building({sortedData, searchText}) {
 
+  // Filtre les profils pour ne garder que ceux de la catégorie "Bâtiment"
   const FilteredProfiles = sortedData.filter(profile =>
    profile.category === 'Bâtiment');
 

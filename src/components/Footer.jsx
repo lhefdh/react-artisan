@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer id="footer-container" className="d-flex flex-column align-items-center">
       <div className="footer-informations d-flex flex-row col-12 justify-content-center flex-wrap">
-        <NavLink to="/" className="footer-logo-container col-xs-12 col-sm-12 col-md-12 col-sm-12 col-xs-12 col-lg-3 me-xs-auto me-sm-auto me-md-auto">
+        <NavLink to="/" className="footer-logo-container col-12 col-lg-3 me-xs-auto me-sm-auto me-md-auto">
           <img className="footer-logo" src={Logo} alt="Logo"/>
         </NavLink >
         <div className="col-xs-9 col-sm-9 col-md-3 col-lg-2 px-0 mx-0">
@@ -25,7 +25,7 @@ export default function Footer() {
             <br/>Ouvert du lundi au jeudi de 8h30 à 12h30 et de 13h30 à 17h
             <br/>Le vendredi de 8h30 à 12h30 et de 13h30 à 16h.
           </p>
-          <p><a href="tel:33426734000" target="_blank"><span className="">+33 (0)4 26 73 40 00</span></a>
+          <p><a href="tel:33426734000"><span className="">+33 (0)4 26 73 40 00</span></a>
             <br />Accueil téléphonique du lundi au vendredi de 8h30 à 17h
           </p>
         </div>

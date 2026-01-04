@@ -8,6 +8,7 @@ import ContactForm from '../components/ContactForm';
 
 export default function  Craftsman ({searchText}) {
   const {id} = useParams()
+  // Trouve l'artisan correspondant à l'ID dans les données
   const selectedCraftsman = datas.find(profile => profile.id === id)
 
     return (
