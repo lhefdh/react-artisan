@@ -1,0 +1,12 @@
+apache
+# Force HTTPS avec HSTS
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# HSTS pour 1 an + preload
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+# Désactive la navigation dans les répertoires  
+Options All -Indexes
