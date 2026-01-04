@@ -35,8 +35,8 @@ export default function Home({craftsman, sortedData, onSetCraftsman, searchText}
         <h1>Comment trouver mon artisan?</h1>
         <div className="category-selection d-flex flex-column">
           {(category === '') ? 
-            <h3>1. Choisissez la catégorie d'artisanat</h3> : 
-            <h3>1. Vous avez choisi la catégorie "<strong>{category}</strong>"</h3>
+            <h2>1. Choisissez la catégorie d'artisanat</h2> : 
+            <h2>1. Vous avez choisi la catégorie "<strong>{category}</strong>"</h2>
           }
           {(craftsman === '' && category === '') && 
             <div className="dropdown align-self-center">
@@ -68,7 +68,7 @@ export default function Home({craftsman, sortedData, onSetCraftsman, searchText}
         </div>
         
         {/* changement de titre aprés le choix de l'artisan */}
-        {(craftsman ==='')? <h3>2. Choisissez votre artisan {category && `dans la catégorie "${category}"`}</h3> : <h3 >2. L'artisan choisit est:</h3>}
+        {(craftsman ==='')? <h2>2. Choisissez votre artisan {category && `dans la catégorie "${category}"`}</h2> : <h2 >2. L'artisan choisit est:</h2>}
         {(category && (craftsman === '')) &&
           <div className="d-flex justify-content-center ">
             <div id="craftsman-list-card" className="card col-sm-8 col-md-6 col-lg-4">
@@ -88,22 +88,22 @@ export default function Home({craftsman, sortedData, onSetCraftsman, searchText}
           </div>
         }
 
-        <h3>3. Contactez Votre Artisan</h3>
+        <h2>3. Contactez Votre Artisan</h2>
         {craftsman && 
         <div className="d-flex flex-column align-items-center py-5">
-          <h4 className="px-0 mx-0">Entrez en contact avec votre artisan <strong>{craftsman.name}</strong></h4>
+          <h3 className="px-0 mx-0">Entrez en contact avec votre artisan <strong>{craftsman.name}</strong></h3>
           <ContactForm/>
           <div className="d-flex justify-content-end">
             <button type="button" onClick={clearchoices} className="btn btn-primary">Refaire votre choix</button>
           </div>
         </div>}
-        <h3>4. Une réponse vous sera apportée sous 48h.</h3>
+        <h2>4. Une réponse vous sera apportée sous 48h.</h2>
       </section>  
 
       <hr/>
 
       <article>
-        <h2>Nos trois champions du mois</h2>
+        <h3>Nos trois champions du mois</h3>
         <div className="d-flex flex-row justify-content-evenly flex-wrap">
           {sortedData.slice(0, 3).map((item) => (
           // le params sera récupérer dans la page Craftsman pour définir quel artisan à afficher

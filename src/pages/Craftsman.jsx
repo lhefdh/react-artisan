@@ -17,7 +17,7 @@ export default function  Craftsman ({searchText}) {
         {/* affichege des résultats de la recherche */}
           <Results searchText={searchText} />
         <div className="craftsman-card-container align-self-center">
-          <h2 className="craftsman-title mb-3">Consultez la Fiche de votre artisan</h2>
+          <h4 className="craftsman-title mb-3">Consultez la Fiche de votre artisan</h4>
           <article className="card d-flex flex-column justify-content-center align-items-center">
             <div className="card-body px-5">
               <h5 className="card-title d-flex justify-content-center"><strong>{selectedCraftsman.name}</strong></h5>

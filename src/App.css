@@ -199,6 +199,7 @@ p {
 }
 #craftsman-container .craftsman-card-container .craftsman-title {
   color: #0074c7;
+  font-weight: 600;
 }
 #craftsman-container .craftsman-card-container .card {
   background-color: #384050;
@@ -240,12 +241,12 @@ p {
   color: #cd2c2e;
 }
 
-#craftsman-card:hover {
+.craftsman-card:hover {
   background-color: #00497c;
   text-decoration: none;
   color: #f1f8fc !important;
 }
-#craftsman-card:hover .card-tite, #craftsman-card:hover .card-subtitle {
+.craftsman-card:hover .card-tite, .craftsman-card:hover .card-subtitle {
   color: #f1f8fc !important;
 }
 
@@ -334,4 +335,4 @@ p {
   font-size: 2rem;
 }
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=App.css.map */

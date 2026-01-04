@@ -193,6 +193,7 @@ p {
     max-width: 60vw;
     .craftsman-title{
       color: $primary-color;
+      font-weight: 600;
     }
     .card{
       background-color: $dark-grey-color;
@@ -237,7 +238,7 @@ p {
   }
 }
 
-#craftsman-card:hover{
+.craftsman-card:hover{
   background-color: $dark-blue-color;
   text-decoration: none;
   color: $light-color!important;

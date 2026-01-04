@@ -13,7 +13,7 @@ profile.category === 'Services');
       <BreadCrumb/>
       {/* affichege des résultats de la recherche */}
       <Results searchText={searchText} sortedData={sortedData}/>
-      <h2>Trouvez votre artisan dans la catégorie de "Services"</h2>
+      <h3>Trouvez votre artisan dans la catégorie de "Services"</h3>
       <article className="list-container d-flex flex-row justify-content-evenly flex-wrap">
         {FilteredProfiles.map((item)=>(
           <Card item={item} id={item.id} key={item.id}/>

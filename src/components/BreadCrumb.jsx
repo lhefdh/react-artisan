@@ -11,7 +11,7 @@ const currentPage = location.pathname === '/batiment'? 'Bâtiment'
 
   return (
     <>
-      <div className="breadcrumb" aria-label="breadcrumb">
+      <div className="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">Accueil</li>
           <li className="breadcrumb-item">Ma Région</li>
