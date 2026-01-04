@@ -4,6 +4,7 @@ import Card from '../components/Card';
 
 export default function Services({sortedData, searchText}) {
 
+  // Filtre les profils pour ne garder que ceux de la catégorie "Services"
 const FilteredProfiles = sortedData.filter(profile =>
 profile.category === 'Services');
 

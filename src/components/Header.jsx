@@ -4,29 +4,33 @@ import Navbar from './Navbar';
 import Logo from '../assets/Logo.png';
 
 export default function Header({ onSetSearchText }) {
+  // Pour gérer l'expansion de la barre de recherche
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  // Pour gérer l'expansion du menu de navigation (mobile)
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
+  // Gère les changements dans l'input de recherche
   const inputHandler = (e) => {
     e.preventDefault();
     const lowerCase = e.target.value.toLowerCase();
     onSetSearchText(lowerCase);
-  };
+  }
 
   const toggleSearch = () => {
-    setIsSearchExpanded(!isSearchExpanded);
+    setIsSearchExpanded(!isSearchExpanded);// Si on ouvre la recherche, on ferme la navigation
     if (!isSearchExpanded) {
       setIsNavExpanded(false);
     }
   };
 
   const toggleNav = () => {
-    setIsNavExpanded(!isNavExpanded);
+    setIsNavExpanded(!isNavExpanded);//Si on ouvre la navigation, on ferme la recherche
     if (!isNavExpanded) {
       setIsSearchExpanded(false);
     }
   };
 
+  // Fermer à la fois la recherche et la navigation
   const closeAll = () => {
     setIsSearchExpanded(false);
     setIsNavExpanded(false);
@@ -40,6 +44,7 @@ export default function Header({ onSetSearchText }) {
         </NavLink>
         <div className="ps-auto navbar-direction">
           <form className="d-flex" role="search">
+            {/* Input de recherche (toujours visible sur desktop) */}
             <input
               className="search-bar-input form-control me-2"
               type="search"
@@ -57,6 +62,7 @@ export default function Header({ onSetSearchText }) {
             >
               <i className="fa-solid fs-2 fa-magnifying-glass mt-2 mx-2"></i>
             </button>
+            {/* Bouton hamburger pour le menu mobile */}
             <button
               className="navbar-toggler mx-2"
               type="button"
@@ -68,13 +74,14 @@ export default function Header({ onSetSearchText }) {
               <span className="navbar-toggler-icon"></span>
             </button>
           </form>
+          {/* Barre de navigation pour desktop (cachée sur mobile) */}
           <div className="inline-menu d-none d-lg-block">
             <Navbar onSetActiveContent={closeAll} />
           </div>
         </div>
       </div>
 
-      {/* RENDER TOUJOURS les éléments, mais contrôle la visibilité avec className */}
+      {/* Section pour les éléments expansibles (mobile) */}
       <div>
         {/* Barre de recherche - toujours présente mais cachée */}
         <form 

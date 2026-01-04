@@ -21,7 +21,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-     // 🔴 Validation des champs vides
+     // Validation des champs vides
     const hasEmptyField = Object.values(contactInputs).some(
       value => value.trim() === ''
     );
@@ -29,11 +29,11 @@ export default function ContactForm() {
     if (hasEmptyField) {
       setError('Tous les champs sont requis');
       setResult(null);
-      return; // ⛔ stop l'envoi
+      return; // Arrête l'envoi du formulaire
     }
-    setError('');
-    setIsLoading(true);
-    setResult(null);
+    setError(''); // Efface les erreurs précédentes
+    setIsLoading(true); // Active l'état de chargement
+    setResult(null); // Efface les résultats précédents
 
     Object.values(contactInputs).some(value => value.trim() === '')
 
@@ -42,9 +42,11 @@ export default function ContactForm() {
       const headers = {
         'Content-Type': 'application/json'
       };
+      // Envoie la requête POST au serveur
       const response = await fetch('http://localhost:3001/api/send-email', {
         method: 'POST',
         headers: headers,
+        // Convertit les données en JSON pour l'envoi
         body: JSON.stringify({
           to: contactInputs.email,
           subject: contactInputs.subject,
@@ -56,21 +58,26 @@ export default function ContactForm() {
       const data = await response.json();
       setResult(data);
 
+      // Si l'envoi a réussi
       if (data.success) {
-        setContactInputs(initialForm);
+        setContactInputs(initialForm); // Réinitialise le formulaire
+
+        // Efface le message de succès après 5 secondes
         setTimeout(() => setResult(null), 5000);
       } else {
+        // Affiche l'erreur retournée par le serveur
         setError(data.message || 'Une erreur est survenue');
       }
       
     } catch (error) {
-      
+      // Gère les erreurs de connexion au serveur
       setResult({ 
         success: false, 
         message: 'Erreur de connexion au serveur: ' + error.message
       });
       setError('Erreur de connexion au serveur')
     } finally {
+      // Désactive l'état de chargement dans tous les cas (succès ou échec)
       setIsLoading(false);
     }
   };
@@ -134,12 +141,14 @@ export default function ContactForm() {
             </div>
           </div>
         </form>
+        {/* Affichage des messages d'erreur */}
         {error && (
         <div className="contactForm-failed">
           <i className="fa-solid fa-circle-exclamation fa-xl mx-2"></i>
           <h3 className="d-inline">{error}</h3>
         </div>
         )}
+        {/* Affichage des messages de succès */}
         {result?.success && (
         <div className="contactForm-success">
           <i className="fa-solid fa-circle-check fa-xl mx-2"></i>
